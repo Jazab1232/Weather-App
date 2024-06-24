@@ -8,7 +8,7 @@ let temperature = document.querySelector("h1");
 let cityElement = document.querySelector("h2");
 let windElement = document.querySelector(".wind");
 let humidityElement = document.querySelector(".humidity");
-let weatherCon = document.querySelector(".weather-con ");
+let weatherCon = document.querySelector("#weather-con h4 ");
 let mainImg = document.querySelector(".weather-img");
 let mainDiv = document.querySelector(".weather");
  
@@ -20,11 +20,35 @@ async function checkWeather(city) {
   fetch(apiUrl + city + `&appid=${apiKey}`).then((data)=>{
 return data.json()
         }).then((data)=>{
-            temperature.innerHTML = Math.round(data.main.temp) + "°C";
 
-            cityElement.innerHTML = data.name;
-            windElement.innerHTML = data.wind.speed + "km/h";
-    humidityElement.innerHTML = data.main.humidity;
+            temperature.innerHTML = Math.round(data.main.temp) + "°C";
+            if(data){
+
+                cityElement.innerHTML = data.name;
+                windElement.innerHTML = data.wind.speed + "km/h";
+                humidityElement.innerHTML = data.main.humidity;
+
+
+                if (data.weather[0].main == 'Clouds') {
+                    mainImg.src = '../Images/Clouds.png';
+                    weatherCon.innerText = "Clouds";
+                } else if (data.weather[0].main == 'Clear') {
+                    mainImg.src = '../Images/Clear.png';
+                    weatherCon.innerText = "Clear";
+                } else if (data.weather[0].main == 'Rain') {
+                    mainImg.src = '../Images/Rain.png';
+                    weatherCon.innerText = "Rain";
+                } else if (data.weather[0].main == 'Haze') {
+                    mainImg.src = '../Images/Drizzle.png';
+                    weatherCon.innerText = "Drizzle";
+                } else if (data.weather[0].main == 'Snow') {
+                    mainImg.src = '../Images/Snow.png';
+                    weatherCon.innerText = "Snow";
+                } else if (data.weather[0].main == 'Mist') {
+                    mainImg.src = '../Images/Mist.png';
+                    weatherCon.innerText = "Mist";
+                }
+            }
     console.log(data.weather[0].main);
         })
         // const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
@@ -38,25 +62,7 @@ return data.json()
 //     mainDiv.innerHTML = '<div> <img src="../Images/drizzle.png"  /> </div>'
 //     weatherCon.innerHTML = "Clouds";
 // }
-//    if (data.weather[0].main == 'Clouds') {
-//     mainImg.src = '../Images/Clouds.png';
-//     weatherCon.innerText = "Clouds";
-// } else if (data.weather[0].main == 'Clear') {
-//     mainImg.src = '../Images/Clear.png';
-//     weatherCon.innerText = "Clear";
-// } else if (data.weather[0].main == 'Rain') {
-//     mainImg.src = '../Images/Rain.png';
-//     weatherCon.innerText = "Rain";
-// } else if (data.weather[0].main == 'Haze') {
-//     mainImg.src = '../Images/Drizzle.png';
-//     weatherCon.innerText = "Drizzle";
-// } else if (data.weather[0].main == 'Snow') {
-//     mainImg.src = '../Images/Snow.png';
-//     weatherCon.innerText = "Snow";
-// } else if (data.weather[0].main == 'Mist') {
-//     mainImg.src = '../Images/Mist.png';
-//     weatherCon.innerText = "Mist";
-// }
+   
 
    
 }
