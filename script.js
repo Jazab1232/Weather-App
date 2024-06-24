@@ -17,17 +17,21 @@ button.addEventListener('click', function () {
 });
 
 async function checkWeather(city) {
-    
-        const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
-       
-            const data = await response.json();
-            console.log(data);
-
+  fetch(apiUrl + city + `&appid=${apiKey}`).then((data)=>{
+return data.json()
+        }).then((data)=>{
             temperature.innerHTML = Math.round(data.main.temp) + "°C";
+
             cityElement.innerHTML = data.name;
             windElement.innerHTML = data.wind.speed + "km/h";
     humidityElement.innerHTML = data.main.humidity;
     console.log(data.weather[0].main);
+        })
+        // const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+       
+        //     const data = await response.json();
+
+           
     //    mainImg.scr = `../Images/${data.weather[0].main}.png`
     
 //     if (data.weather[0].main == 'Haze') {
