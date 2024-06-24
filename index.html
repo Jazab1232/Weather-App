@@ -1,47 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather App</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
 
-  <body>
-    <div class="card">
-      <div class="search">
-        <input type="text" id="input"  placeholder="Type city name"/>
-        <button><img id="search-icon" src="../Images/search.png" /></button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <!-- font Awesome -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css"
+    integrity="sha512-UuQ/zJlbMVAw/UU8vVBhnI4op+/tFOpQZVT+FormmIEhRSCnJWyHiBbEVgM4Uztsht41f3FzVWgLuwzUqOObKw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+  <!-- CSS File -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="card">
+    <div class="search">
+      <input type="text" id="input" placeholder="Type city name" />
+      <button><img id="search-icon" src="../Images/search.png" /></button>
+      <!-- <button><i class="fa-light fa-magnifying-glass"></i></button> -->
+    </div>
+
+    <div class="weather">
+      <img src="../Images/rainy.png" class="weather-img" />
+      <div id="weather-con">
+        <h4>Rainy</h4>
       </div>
+      <h1>20°C</h1>
+      <h2>New York</h2>
 
-      <div class="weather">
-        <img src="../Images/rainy.png" class="weather-img" />
-        <div id="weather-con">
-          <h4 >Rainy</h4>
-        </div>
-        <h1>20°C</h1>
-        <h2>New York</h2>
-
-        <div class="details">
-          <div class="col">
-            <img src="../Images/Humidity.png" class="img-humi" />
-            <div>
-              <p class="humidity">40%</p>
-              <p>Humidity</p>
-            </div>
+      <div class="details">
+        <div class="col">
+          <img src="../Images/Humidity.png" class="img-humi" />
+          <div>
+            <p class="humidity">40%</p>
+            <p>Humidity</p>
           </div>
+        </div>
 
-          <div class="col">
-            <img src="../Images/Wind.png" class="img-wind" />
-            <div>
-              <p class="wind">12km/h</p>
-              <p>Wind Speed</p>
-            </div>
+        <div class="col">
+          <img src="../Images/Wind.png" class="img-wind" />
+          <div>
+            <p class="wind">12km/h</p>
+            <p>Wind Speed</p>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="./script.js"></script>
-  </body>
+  <script src="./script.js"></script>
+</body>
+
 </html>

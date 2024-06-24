@@ -36,13 +36,16 @@ body {
 }
 
 .search button {
+    background-color: white;
     border: 0;
     outline: 0;
     border-radius: 50%;
     height: 60px;
     width: 60px;
+    padding: 4px 0 0 0;
     cursor: pointer
 }
+
 
 .search button img {
     width: 25px;
@@ -52,7 +55,7 @@ body {
 #input {
     border: 0;
     outline: 0;
-    background-color: #ebfffc;
+    background-color: #ffffff;
     color: #555;
     padding: 10px 25px;
     height: 30px;
